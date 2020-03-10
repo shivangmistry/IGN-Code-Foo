@@ -5,9 +5,13 @@ I am writing to apply for Engineering Internship at Code Foo, IGN. I am a gradua
 I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set, as continuing to learn new languages and development techniques are important to me and the success of your organization. Your listed requirements closely match my background and skills. A few I would like to highlight that would enable me to contribute to you are:
 
 Highly skilled in designing, developing and testing software.
+
 Thorough understanding of data structures and algorithms.
+
 Knowledge of back-end development.
+
 Hands-on software troubleshooting experience.
+
 Proven track record of proper documentation for future maintenance and upgrades.
 
 Sincerely,
