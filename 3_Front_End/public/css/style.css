@@ -35,7 +35,8 @@ i {
 }
 
 .content{
-    padding: 0 100px;
+    margin: 0 auto;
+    width: 75%;
 }
 
 .headerFlex {
@@ -46,12 +47,12 @@ i {
 }
 
 #logo {
-    width: 150px;
+    width: 130px;
     height: 70px;
 }
 
 .date {
-    padding:0 15px;
+    padding: 0 15px;
     font-size: larger;
     font-weight: 800;
 }
@@ -75,6 +76,10 @@ i {
     border-radius: 5%;
 }
 
+.redButton:hover {
+    background-color: rgb(117, 19, 19);
+}
+
 nav ul {  
     display: flex;
     justify-content: space-between;
@@ -84,9 +89,84 @@ nav ul {
 nav li {
     flex-grow: 1;
     text-align: center;
-    border-left: 1px solid black;
+    border-right: 1px solid rgba(37,38,39,0.15)
 }
 
 nav li:first-child {
     border-left: 0;
+}
+
+.main {
+    display: flex;
+    margin: 25px auto;
+}
+
+.playArea {
+    width: min-content;
+}
+
+#playlistArea {
+    padding: 0 10px;
+    width: inherit;
+}
+
+#currentVideo {
+    border-radius: 10px;
+    outline: none;
+    height: 400px;
+    width: auto;
+}
+
+#videoTitle {
+    margin-bottom: 0;
+    font-size: 2.5em;
+}
+
+.playlistItem {
+    display: flex;
+    margin: 0 10px;
+    padding: 10px 0;
+    cursor: pointer;
+    border-top: 1px solid rgba(37,38,39,0.15);
+}
+
+.playlistItem:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.playlistItem {
+    font-weight: 500;
+}
+
+.playlistItem:hover {
+    text-decoration: underline;
+}
+
+.thumbnail {
+    margin-right: 10px;
+    border-radius: 10px;
+    max-width: 150px;
+    max-height: 70px;
+}
+
+.durationDiv {
+    position: absolute;
+}
+
+.duration {
+    position: relative;
+    top: 45px;
+    right: 55px;
+    padding: 3px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.loadMore {
+    margin: 10px;
+    width: 100%;
 }
