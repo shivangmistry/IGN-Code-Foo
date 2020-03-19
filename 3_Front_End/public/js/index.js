@@ -52,7 +52,6 @@ function setPlayArea(startIndex){
 
     $('video').on('ended', function () {
         if(startIndex+1<count){
-            console.log("Video ended.");
             setPlayArea(startIndex + 1);
         }
     });
@@ -96,9 +95,4 @@ function setPlaylistArea(start, end){
         })
     }
 
-}
-
-function test(index){
-    console.log(index);
-    setPlayArea(index);
 }
