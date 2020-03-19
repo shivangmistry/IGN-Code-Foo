@@ -126,7 +126,6 @@ nav li:first-child {
     display: flex;
     margin: 0 10px;
     padding: 10px 0;
-    cursor: pointer;
     border-top: 1px solid rgba(37,38,39,0.15);
 }
 
@@ -139,7 +138,12 @@ nav li:first-child {
     font-weight: 500;
 }
 
-.playlistItem:hover {
+.playlistItem a {
+    height: fit-content;
+}
+
+.playlistItem a:hover {
+    cursor: pointer;
     text-decoration: underline;
 }
 
@@ -148,6 +152,7 @@ nav li:first-child {
     border-radius: 10px;
     max-width: 150px;
     max-height: 70px;
+    cursor: pointer;
 }
 
 .durationDiv {

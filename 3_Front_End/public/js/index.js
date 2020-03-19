@@ -1,5 +1,6 @@
 var videos = [];
 var count = 0;
+let showAll = false;
 
 $(() => {
     init();
@@ -50,7 +51,6 @@ function setPlayArea(startIndex){
     $('#videoDescription').text(videos[startIndex].metadata.description);
 
     $('video').on('ended', function () {
-        // not auto playing when clicked
         if(startIndex+1<count){
             console.log("Video ended.");
             setPlayArea(startIndex + 1);
@@ -65,31 +65,40 @@ function setPlayArea(startIndex){
 
 function setPlaylistArea(start, end){
 
+    if(showAll){
+        end = count
+    }
+
     videos.slice(start, end).forEach((v, index) => {
         let t = v.thumbnails[0];
         let d = v.metadata.duration;
-        const duration = (~~(d/60)).toString() + ":" + (d%60).toString();
+        let mm = d%60;
+        if(mm<10){
+            mm = '0' + (d%60).toString();
+        }
+        const duration = (~~(d/60)).toString() + ":" + mm.toString();
 
         $("#playlistArea").append("<div class='playlistItem' videoid=" + (start+index) + ">" + 
                 "<div>" +
-                    "<img class='thumbnail' src="+t.url+" alt='" + v.metadata.title + "' >" +
+                    "<img class='thumbnail' src=" + t.url + " alt='" + v.metadata.title + "' onclick='setPlayArea(" + (start+index) +")' >" +
                     "<span class='durationDiv'><span class='duration'>" + duration + "</span><span>" + 
                 "</div>" +
-                v.metadata.title +
+                "<a onclick='setPlayArea(" + (start+index) +")'>" + v.metadata.title + "</a>" +
             "</div>");
     });
 
     if(end<count){
         $("#playlistArea").append("<button id='loadButton' class='redButton loadMore'>Load More</button>");
         $("#loadButton").click(function() {
+            showAll = true
             $(this).hide();
             setPlaylistArea(end, count);
         })
     }
 
-    $(".playlistItem").click(function (event) {
-        const startIndex = $(this).attr('videoid');
-        console.log(startIndex);
-        setPlayArea(startIndex);
-    })
+}
+
+function test(index){
+    console.log(index);
+    setPlayArea(index);
 }
