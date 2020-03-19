@@ -1,4 +1,4 @@
-**Dependecies: ** Node
+**Dependecies:** Node
 
 * After installing node, naviagte to project folder named 3_Front_End and run 'npm install' on a terminal to install rest of the dependencies
 * Run 'node app.js'
